@@ -1,0 +1,64 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="enable_high_security"
+        android:summary="@string/pref_description_enable_high_security"
+        android:title="@string/pref_title_enable_high_security" />
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <ListPreference
+        android:defaultValue="4"
+        android:entries="@array/pref_list_security_titles"
+        android:entryValues="@array/pref_list_security_values"
+        android:key="low_security"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_low_security" />
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <ListPreference
+        android:defaultValue="4"
+        android:entries="@array/pref_list_security_titles"
+        android:entryValues="@array/pref_list_security_values"
+        android:key="high_security"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_high_security" />
+
+    <!-- This preference simply launches an intent when selected. Use this UI sparingly, per
+         design guidelines. -->
+    <Preference android:title="@string/pref_title_pattern">
+        <intent android:action="android.settings.SYNC_SETTINGS" />
+    </Preference>
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <!--android:capitalize="words"-->
+    <!--android:defaultValue="@string/pref_default_display_name"-->
+    <EditTextPreference
+        android:inputType="numberPassword"
+        android:key="pin"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_pin" />
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+
+    <!--android:capitalize="words"-->
+    <!-- android:defaultValue="@string/pref_default_display_name" -->
+    <EditTextPreference
+        android:inputType="textPassword"
+        android:key="password"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_password" />
+
+</PreferenceScreen>
